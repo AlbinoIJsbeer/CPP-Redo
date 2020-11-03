@@ -1,8 +1,10 @@
-#include <SFML/Graphics.hpp>
+#include <iostream>
+#include "Game.h"
+#include "DEFENITIONS.h"
 
 int main(){
     
-    
-    return 0;
-    
+    Game(SCREEN_WIDTH, SCREEN_HEIGHT, "C++ Assignment");
+
+    return EXIT_SUCCESS;
 }
