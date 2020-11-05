@@ -18,7 +18,7 @@ void MainMenuState::Init()
     this->_title.setTexture(this->_data->assets.GetTexture("Title"));
     this->_playButton.setTexture(this->_data->assets.GetTexture("Play Button"));
 
-    this->_title.setPosition(0, SCREEN_HEIGHT / 4);
+    this->_title.setPosition(-75, SCREEN_HEIGHT / 4);
     this->_playButton.setPosition(SCREEN_WIDTH / 4, (SCREEN_HEIGHT / 4) * 3);
 }
 
