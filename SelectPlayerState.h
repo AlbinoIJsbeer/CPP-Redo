@@ -4,11 +4,12 @@
 #include "State.h"
 #include "Game.h"
 #include "InputManager.h"
+#include "Player.h"
 
-class MainMenuState : public State
+class SelectPlayerState : public State
 {
     public:
-        MainMenuState(GameDataRef data);
+        SelectPlayerState(GameDataRef data);
 
         void Init();
 
@@ -16,10 +17,11 @@ class MainMenuState : public State
         void Update(float dt);
         void Draw(float dt);
     private:
+        Player _player = Player();
         GameDataRef _data;
         sf::Sprite _background;
         sf::Sprite _playButton;
-        sf::Sprite _title;
         sf::Sprite _quitButton;
+        sf::Sprite _randomizeButton;
 
 };
