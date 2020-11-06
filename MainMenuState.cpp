@@ -2,6 +2,7 @@
 #include "MainMenuState.h"
 #include "DEFENITIONS.h"
 #include <iostream>
+#include "GameState.h"
 
 MainMenuState::MainMenuState(GameDataRef data) : _data(data)
 {
@@ -36,6 +37,7 @@ void MainMenuState::HandleInput()
         if(this->_data->input.IsSpriteClicked(this->_playButton, sf::Mouse::Left, this->_data->window))
         {
             std::cout << "On to the game!" << std::endl;
+            this->_data->machine.AddState(StateRef(new GameState(_data)), true);
         }
     }
 }
