@@ -11,12 +11,12 @@ class Player
         Player();
         ~Player() {}
 
-        void RandomizePlayer(Player &_player);
+        void SetPlayerStats(int _speed, int _strength, int _wits);
         void setDefaultStats(Player &_player);
 
-        int strength = 1;
-        int speed = 1;
-        int wits = 1;
+        int strength;
+        int speed;
+        int wits;
 
     private:
 

@@ -12,7 +12,7 @@ SelectPlayerState::SelectPlayerState(GameDataRef data) : _data(data)
 
 void SelectPlayerState::Init()
 {   
-    _player.setDefaultStats(_player);
+    std::cout << _player.speed << std::endl;
     this->_data->assets.LoadTexture("Background", SELECT_PLAYER_BACKGROUND);
     this->_data->assets.LoadTexture("Play Button", MAIN_MENU_PLAY_BUTTON);
     this->_data->assets.LoadTexture("Quit Button", MAIN_MENU_QUIT_BUTTON);
@@ -31,6 +31,9 @@ void SelectPlayerState::Init()
 void SelectPlayerState::HandleInput()
 {
     sf::Event ev;
+    int _speed = 0;
+    int _strength = 0;
+    int _wits = 0;
 
     while(this->_data->window.pollEvent(ev))
     {
@@ -52,7 +55,10 @@ void SelectPlayerState::HandleInput()
                 if(this->_data->input.IsSpriteClicked(this->_randomizeButton, sf::Mouse::Left, this->_data->window))
         {
             std::cout << "Randomizing Player!" << std::endl;
-            _player.RandomizePlayer(_player);
+            _speed = 5;
+            _strength = 5;
+            _wits = 5;
+            _player.SetPlayerStats(_speed, _strength, _wits);
         }
 
     }

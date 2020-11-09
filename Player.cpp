@@ -2,22 +2,22 @@
 
 Player::Player()
 {
-
+    strength = 0;
+    speed = 0;
+    wits = 0;
 }
 
 void Player::setDefaultStats(Player &_player)
 {
-    _player.speed = 1;
-    _player.strength = 1;
-    _player.wits = 1;
+
 }
 
-void Player::RandomizePlayer(Player &_player)
+void Player::SetPlayerStats(int _speed, int _strength, int _wits)
 {
-    // _player.speed = rand()%(MAX_PLAYER_SPEED-1 + 1) + 1;
-    // _player.strength = rand()%(MAX_PLAYER_STRENGTH-1 + 1) + 1;
-    // _player.wits = rand()%(MAX_PLAYER_WITS-1 + 1) + 1;
-    std::cout << " speed: " + _player.speed << std::endl;
-    std::cout << " strength: " + _player.strength << std::endl; 
-    std::cout << " wits: " + _player.wits << std::endl;
+    speed = _speed;
+    strength = _strength;
+    wits = _wits;
+    std::cout << " speed: " + speed << std::endl;
+    std::cout << " strength: " + strength << std::endl; 
+    std::cout << " wits: " + wits << std::endl;
 }
